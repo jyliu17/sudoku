@@ -23,10 +23,10 @@ const Board = ({isInputValid, solveSudoku}) => {
       isInputValid(newBoardState,rowIndex, columnIndex, newValue)
       
       let solution = solveSudoku(boardState, 0, 0)
-      console.log(solution)
-      // if (newBoardState === solution) {
-      //   alert("Puzzle Solved!")
-      // }
+      // console.log(solution)
+      if (newBoardState === solution) {
+        alert("Puzzle Solved!")
+      }
   }
 
   // const solve = () => {

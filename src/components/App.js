@@ -7,25 +7,26 @@ const App = () => {
 
     // Check if a row is valid
     const isRowValid = (board, row, value) => {
-        
         for (let i = 0; i < 9; i++) {
-            if (board[row - 1][i] === value) {
-                alert("contains duplicate number")
-                
+            // console.log(row)
+            // console.log(i)
+            if (board[row][i] === value) {
+                alert("Duplicate in row")
+                return false;
             }
         }
-        return board;
+        return true;
     };
   
     // Check if a column is valid
     const isColumnValid = (board, column, value) => {
         for (let i = 0; i < 9; i++) {
-            if (board[i][column - 1] === value) {
-                alert("contains duplicate number")
+            if (board[i][column] === value) {
+                alert("Duplicate in column")
                 return false;
             }
         }
-        return board;
+        return true;
     };
   
     // Check if a sub-box is valid
@@ -36,12 +37,12 @@ const App = () => {
         for (let i = 0; i <  3; i++) {
             for (let j = 0; j < 3; j++) {
                 if (board[i + startRow][j + startCol] === value) {
-                    alert("contains duplicate number")
+                    alert("Duplicate in sub box")
                     return false;
                 }
             }
         }
-        return board;
+        return true;
     };
   
     // Check if the user input adheres to the rules of Sudoku
